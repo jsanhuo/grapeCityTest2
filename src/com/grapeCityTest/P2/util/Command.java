@@ -8,7 +8,7 @@ public class Command {
     public int length = 0;
     public orderOption orderOption;
     public List<Entry<String,Integer>> data = new ArrayList<Entry<String,Integer>>();
-
+    
     public Command(String[] args) {
         if(args.length<3){
             System.err.println("命令不全");
