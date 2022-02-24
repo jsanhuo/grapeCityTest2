@@ -8,15 +8,15 @@ public class Command {
     public int length = 0;
     public orderOption orderOption;
     public List<Entry<String,Integer>> data = new ArrayList<Entry<String,Integer>>();
-    
-    public Command(String[] args) {
+
+    public Command(int i,String[] args) {
         if(args.length<3){
             System.err.println("命令不全");
             return;
         }
         try{
-            length = Integer.parseInt(args[0]);
-            String[] o = args[1].split(" ");
+            length = i;
+            String[] o = args[0].split(" ");
             orderOption = new orderOption(o[0],o[1]);
             initData(args);
         }catch(Exception e){
@@ -26,7 +26,7 @@ public class Command {
     }
 
     private void initData(String[] args){
-        for(int i=2;i<args.length;i++){
+        for(int i=1;i<args.length;i++){
             String[] temp = args[i].split(" ");
             Entry<String, Integer> stringIntegerEntry = new Entry<String, Integer>(temp[0],Integer.parseInt(temp[1]));
             data.add(stringIntegerEntry);

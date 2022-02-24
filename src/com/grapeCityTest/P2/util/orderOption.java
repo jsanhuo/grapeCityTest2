@@ -16,4 +16,12 @@ public class orderOption {
     public String getOrder() {
         return order;
     }
+
+    @Override
+    public String toString() {
+        return "orderOption{" +
+                "name='" + name + '\'' +
+                ", order='" + order + '\'' +
+                '}';
+    }
 }
