@@ -4,6 +4,9 @@ package com.grapeCityTest.P2.util;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 命令要求
+ */
 public class Command {
     public int length = 0;
     public orderOption orderOption;

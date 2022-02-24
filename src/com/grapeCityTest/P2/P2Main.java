@@ -17,6 +17,7 @@ public class P2Main {
     public static void main(String[] args) {
         Command c = read();
         Controller controller = new Controller(c);
-
+        Frame frame = new Frame(controller);
+        frame.printTable();
     }
 }

@@ -11,7 +11,6 @@ public class Controller {
     public Controller(Command command) {
         c = command;
         Order();
-        printCommand();
     }
 
     public void printCommand(){
