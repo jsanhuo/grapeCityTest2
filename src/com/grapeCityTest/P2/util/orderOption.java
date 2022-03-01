@@ -15,6 +15,12 @@ public class orderOption {
     private String order;
 
     public orderOption(String name,String order){
+        if(!"Name".equals(name)&&!"Value".equals(name)){
+            throw new IllegalArgumentException("排序字段错误");
+        }
+        if(!"ASC".equals(order)&&!"DESC".equals(order)){
+            throw new IllegalArgumentException("排序顺序错误");
+        }
         this.name = name;
         this.order = order;
     }
