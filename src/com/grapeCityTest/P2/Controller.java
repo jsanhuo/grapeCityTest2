@@ -6,13 +6,20 @@ import com.grapeCityTest.P2.util.Entry;
 import java.util.Collections;
 import java.util.Comparator;
 
+/**
+ * 控制类
+ */
 public class Controller {
+    //命令
     Command c;
     public Controller(Command command) {
         c = command;
         Order();
     }
 
+    /**
+     * 测试方法
+     */
     public void printCommand(){
         System.out.println(c.length);
         System.out.println(c.orderOption);
@@ -21,9 +28,13 @@ public class Controller {
         }
     }
 
+    /**
+     * 排序
+     */
     public void Order(){
         Command command = c;
         Comparator<Entry<String, Integer>> entryComparator;
+        //根据排序操作
         if(command.orderOption.getName().equals("Name")){
             if(command.orderOption.getOrder().equals("ASC")){
                 entryComparator = new Comparator<Entry<String, Integer>>() {
@@ -57,6 +68,7 @@ public class Controller {
                 };
             }
         }
+        // 通过生成的Comparator来进行排序
         Collections.sort(command.data,entryComparator);
     }
 }

@@ -5,10 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 命令要求
+ * 命令类
  */
 public class Command {
+    /**
+     *数据长度
+     */
     public int length = 0;
+    /**
+     * 排序
+     */
     public orderOption orderOption;
     public List<Entry<String,Integer>> data = new ArrayList<Entry<String,Integer>>();
 
@@ -28,6 +34,10 @@ public class Command {
         }
     }
 
+    /**
+     * 初始化数据集合
+     * @param args
+     */
     private void initData(String[] args){
         for(int i=1;i<args.length;i++){
             String[] temp = args[i].split(" ");

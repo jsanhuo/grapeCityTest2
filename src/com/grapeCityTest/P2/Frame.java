@@ -6,13 +6,22 @@ import com.grapeCityTest.P2.util.Entry;
 
 import java.util.List;
 
+/**
+ * 框架类
+ */
 public class Frame {
+    /**
+     * 数据的集合
+     */
     public List<Entry<String,Integer>> data;
     public Frame(Controller controller){
         data = controller.c.data;
 
     }
 
+    /**
+     * 输出框架
+     */
     public void printTable(){
         StringBuilder s = new StringBuilder();
         s.append(getUpLine()+"\n");
@@ -26,6 +35,12 @@ public class Frame {
         s.append(getDownLine());
         System.out.print(s.toString());
     }
+
+    /**
+     * 填充数据
+     * @param data 数据源
+     * @return 例：│pineapple│████████████████████│
+     */
     public String getMid(Entry<String,Integer> data){
         StringBuilder s = new StringBuilder();
         s.append(Draw.vertical());
@@ -47,6 +62,10 @@ public class Frame {
         return s.toString();
     }
 
+    /**
+     * 获得中间行
+     * @return 例：│─────────┼────────────────────│
+     */
     public String getMidLine(){
         StringBuilder s = new StringBuilder();
         s.append(Draw.vertical());
@@ -61,6 +80,10 @@ public class Frame {
         return s.toString();
     }
 
+    /**
+     * 获得顶部行
+     * @return 例：┌─────────┬────────────────────┐
+     */
     public String getUpLine(){
         StringBuilder s = new StringBuilder();
         s.append(Draw.top_left());
@@ -74,6 +97,11 @@ public class Frame {
         s.append(Draw.top_right());
         return s.toString();
     }
+
+    /**
+     * 获得底部行
+     * @return 例：└─────────┴────────────────────┘
+     */
     public String getDownLine(){
         StringBuilder s = new StringBuilder();
         s.append(Draw.down_left());
